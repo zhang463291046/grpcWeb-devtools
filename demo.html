@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>demo</title>
+</head>
+
+<body>
+	<h1>页面page到谷歌插件grpcWeb-devtools的信息通讯</h1>
+	<h2 onclick="addFn()">添加</h2>
+	<h2 onclick="updateFn()">更新</h2>
+</body>
+<script>
+	let idCount = 0;
+	let id;
+
+	function addFn() {
+		window.console3 = window.console3 || function () {};
+		id = new Date().getTime() + 'a' + idCount++;
+		const message = {
+			title: 'list',
+			id: id,
+			datas: [{
+				name: 'Url',
+				data: '.customercenter.CustomerListService.updateBusinessStatus'
+			}, {
+				name: 'Request',
+				data: {
+					status: 1,
+					a: "",
+					b: "",
+					c: ""
+				},
+				expandLevel: 2 // json展开层数
+			}, {
+				name: 'Response',
+				data: 'pedding',
+				expandLevel: 2 // json展开层数
+			}]
+		}
+		window.console3(message)
+	}
+
+	// type: 'update',更新id相同的同一条数据
+	function updateFn() {
+		window.console3 = window.console3 || function () {};
+		const message = {
+			type: 'update',
+			title: 'list',
+			id: id,
+			datas: [{
+				name: 'Url',
+				data: '.customercenter.CustomerListService.updateBusinessStatus'
+			}, {
+				name: 'Request',
+				data: {
+					status: 1,
+					a: "",
+					b: "",
+					c: ""
+				},
+				expandLevel: 2 // json展开层数
+			}, {
+				name: 'Response',
+				data: {
+					code: 0,
+					msg: "更新成功",
+					data: {
+						a: "",
+						b: "",
+						c: ""
+					},
+				},
+				expandLevel: 2 // json展开层数
+			}]
+		}
+		window.console3(message)
+	}
+</script>
+
+</html>
