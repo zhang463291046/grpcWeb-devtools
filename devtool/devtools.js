@@ -18,11 +18,7 @@ chrome.devtools.panels.create("grpcWeb",
 
 // 监听来自content-script的消息
 chrome.runtime.onMessage.addListener(function (request, sender, callback) {
-  if (!extPanelWindow.sendConsole2) {
-    console.error('grpcWeb面板中暂时没有sendConsole2方法')
-    return;
-  }
-  extPanelWindow.sendConsole2(request);
+  extPanelWindow.sendConsole2 && extPanelWindow.sendConsole2(request);
 });
 
 // 监听来自content-script的长连接

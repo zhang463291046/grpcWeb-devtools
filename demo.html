@@ -18,7 +18,7 @@
 	let id;
 
 	function addFn() {
-		window.console3 = window.console3 || function () {};
+		window.console2 = window.console2 || function () {};
 		id = new Date().getTime() + 'a' + idCount++;
 		const message = {
 			title: 'list',
@@ -41,12 +41,12 @@
 				expandLevel: 2 // json展开层数
 			}]
 		}
-		window.console3(message)
+		window.console2(message)
 	}
 
 	// type: 'update',更新id相同的同一条数据
 	function updateFn() {
-		window.console3 = window.console3 || function () {};
+		window.console2 = window.console2 || function () {};
 		const message = {
 			type: 'update',
 			title: 'list',
@@ -77,7 +77,7 @@
 				expandLevel: 2 // json展开层数
 			}]
 		}
-		window.console3(message)
+		window.console2(message)
 	}
 </script>
 

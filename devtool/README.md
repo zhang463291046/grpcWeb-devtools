@@ -1,5 +1,5 @@
 # 提供一个window.console2()方法
-`
+```
 / use function 'console2' in your code
 
 // simple
@@ -40,7 +40,7 @@ console2({
   // need type = 'update'
   type: 'update'
 })
-`
+```
 
 
 # panel demo
@@ -58,4 +58,8 @@ console2({
 # 后台
 不可以直接在console中打印日志
 
-通过content-script.js中注入injected.js，实现页面demo调用插件的方法通讯
+# 通过content-script.js中注入injected.js，实现页面demo调用插件的方法通讯
+
+# 打包生成的安装文件devtool.crx
+
+# 打包需要的秘钥文件devtool.pem

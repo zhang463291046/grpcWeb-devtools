@@ -2,6 +2,9 @@
 console.log('我是页面注入的js，页面可以直接调用我的方法', window)
 
 // 注入外部页面demo Page方法，发送普通消息到content-script
-function console3(data) {
-	window.postMessage(data, '*');
+function console2(data) {
+	window.postMessage({
+		key: 'console2',
+		value: data
+	}, '*');
 }

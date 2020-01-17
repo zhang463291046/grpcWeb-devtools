@@ -22,10 +22,12 @@ function injectCustomJs() {
 
 // 监听来自外部页面demo Page的消息,发送的消息方法在injected.js中
 window.onmessage = function (event) {
-	// 发送消息
-	chrome.runtime.sendMessage(event.data, function (response) {
-		// 回调函数
-	});
+	if (event.data.key && event.data.key == 'console2') {
+		// 发送消息
+		chrome.runtime.sendMessage(event.data.value, function (response) {
+			// 回调函数
+		});
+	}
 }
 
 // 监听来自devtools的消息,发送的消息方法在devtools.js中
